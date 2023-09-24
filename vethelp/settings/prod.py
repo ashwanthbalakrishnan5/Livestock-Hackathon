@@ -2,7 +2,7 @@ from .common import *
 import os
 import dj_database_url
 
-DATABASES = {"default": dj_database_url.config(default=config("DATABASE_URL"))}
+DATABASES = {"default": dj_database_url.config(default=os.environ.get("DATABASE_URL"))}
 
 DEBUG = os.environ.get("DEBUG")
 
