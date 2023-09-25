@@ -9,7 +9,7 @@ class AnimalSerializer(serializers.ModelSerializer):
 
 
 class BreedSerializer(serializers.ModelSerializer):
-    animal = AnimalSerializer()
+    # animal = AnimalSerializer()
 
     class Meta:
         model = Breeds
@@ -17,7 +17,7 @@ class BreedSerializer(serializers.ModelSerializer):
 
 
 class InfoSerializer(serializers.ModelSerializer):
-    breed = BreedSerializer()
+    # breed = BreedSerializer()
 
     class Meta:
         model = Info
