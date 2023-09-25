@@ -1,9 +1,15 @@
 from .common import *
+import dj_database_url
+
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "nevcykgoxnxvgyfr",
+        "USER": "ocrrvxkapzuhefbh",
+        "PASSWORD": "phksuujdhodxomva",
+        "HOST": "13.233.194.98",
+        "PORT": "8001",
     }
 }
 

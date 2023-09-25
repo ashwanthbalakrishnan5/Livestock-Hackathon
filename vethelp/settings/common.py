@@ -38,7 +38,6 @@ INSTALLED_APPS = [
     "debug_toolbar",
     "djoser",
     "drf_spectacular",
-    "drf_api_logger",
     "phonenumber_field",
     "corsheaders",
     "core",
@@ -114,16 +113,19 @@ USE_I18N = True
 
 USE_TZ = True
 
+AWS_ACCESS_KEY_ID = "AKIAWXIEZIYUHYDX5OS5"
+AWS_SECRET_ACCESS_KEY = "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"
+AWS_STORAGE_BUCKET_NAME = "livestockhackathon"
+AWS_S3_REGION_NAME = "ap-south-1"
+AWS_DEFAULT_ACL = "private"
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/4.2/howto/static-files/
+AWS_S3_CUSTOM_DOMAIN = f"{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com"
 
-STATIC_URL = "static/"
+STATICFILES_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
+STATIC_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/static/"
 
-STATIC_ROOT = os.path.join(BASE_DIR, "static")
-
-# Default primary key field type
-# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
+DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
+MEDIA_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/media/"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
@@ -148,8 +150,5 @@ SPECTACULAR_SETTINGS = {
     "VERSION": "1.0.0",
     "SERVE_INCLUDE_SCHEMA": False,
 }
-
-
-DRF_API_LOGGER_DATABASE = True
 
 CORS_ALLOW_ALL_ORIGINS = True
