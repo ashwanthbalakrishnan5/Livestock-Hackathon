@@ -5,10 +5,10 @@ import dj_database_url
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": "nevcykgoxnxvgyfr",
-        "USER": "ocrrvxkapzuhefbh",
-        "PASSWORD": "phksuujdhodxomva",
-        "HOST": "13.233.194.98",
+        "NAME": "rdfxsempzpaxbxgk",
+        "USER": "blxgmpfbdpirgcjx",
+        "PASSWORD": "gpnfmjqjbbogxdzv",
+        "HOST": "43.204.148.230",
         "PORT": "8001",
     }
 }
